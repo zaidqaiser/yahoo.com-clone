@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yahoo | Mail, Weather, Search, Politics</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="output.css">
+
+
+</head>
+
+
+<body class="font-sans">
+    <!-- nav bar Start from here -->
+<nav id="navbar" class="fixed top-0 left-0 bg-white md:justify-center lg:h-14 lg:space-x-10 space-x-4 p-4 items-center flex w-full h-12 ">
+    <div class="w-6 md:hidden">
+        <img class="w-full " src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTE3LjUwMDEgNS44MzM0MkgyLjUwMDA4QzIuMDM5NjYgNS44MzM0MiAxLjY2Njc1IDUuNDYwMDggMS42NjY3NSA1LjAwMDA4QzEuNjY2NzUgNC41NDAwOCAyLjAzOTY2IDQuMTY2NzUgMi41MDAwOCA0LjE2Njc1SDE3LjUwMDFDMTcuOTYwMSA0LjE2Njc1IDE4LjMzMzQgNC41NDAwOCAxOC4zMzM0IDUuMDAwMDhDMTguMzMzNCA1LjQ2MDA4IDE3Ljk2MDEgNS44MzM0MiAxNy41MDAxIDUuODMzNDJaTTE3LjUwMDEgMTEuMjUwMUgyLjUwMDA4QzIuMDM5NjYgMTEuMjUwMSAxLjY2Njc1IDEwLjg3NjcgMS42NjY3NSAxMC40MTY3QzEuNjY2NzUgOS45NTYzMyAyLjAzOTY2IDkuNTgzNDEgMi41MDAwOCA5LjU4MzQxSDE3LjUwMDFDMTcuOTYwMSA5LjU4MzQxIDE4LjMzMzQgOS45NTYzMyAxOC4zMzM0IDEwLjQxNjdDMTguMzMzNCAxMC44NzY3IDE3Ljk2MDEgMTEuMjUwMSAxNy41MDAxIDExLjI1MDFaTTIuNTAwMDggMTYuNjY2N0gxNy41MDAxQzE3Ljk2MDEgMTYuNjY2NyAxOC4zMzM0IDE2LjI5MzQgMTguMzMzNCAxNS44MzM0QzE4LjMzMzQgMTUuMzczIDE3Ljk2MDEgMTUuMDAwMSAxNy41MDAxIDE1LjAwMDFIMi41MDAwOEMyLjAzOTY2IDE1LjAwMDEgMS42NjY3NSAxNS4zNzMgMS42NjY3NSAxNS44MzM0QzEuNjY2NzUgMTYuMjkzNCAyLjAzOTY2IDE2LjY2NjcgMi41MDAwOCAxNi42NjY3WiIgZmlsbD0iIzIzMkEzMSIvPjwvc3ZnPg==" alt="">
+    </div>
+        
+    <div class="w-[5rem]">
+        <img class="w-full h-full" src="/src/images/logo.png" alt="logo">
+    </div>
+
+    <form class="relative flex md:w-[22rem] xl:w-[44rem] w-[34rem]" action="">
+        <input class=" focus:outline-none lg:h-9  ps-4 text-[13px] rounded-full w-full h-7 border-none bg-gray-100" type="text" placeholder="Search the web">
+        <button class="absolute right-0 top-0 bottom-0 bg-[#6001d2] rounded-full lg:w-16 w-14  h-7 lg:h-9  border-none">
+            <i class="text-white fas fa-search"></i>
+        </button>
+    </form>
+    
+    <div>
+        <ul class="hidden md:flex space-x-6 lg:ml-[4rem]">
+            <li class="font-bold ">News</li>
+            <li class="font-medium text-[#848688] hover:text-[#6001d2]">Finance</li>
+            <li class="font-medium text-[#848688] hover:text-[#6001d2]">Sports</li>
+            <li class=" font-medium flex items-end text-[#848688] hover:text-[#6001d2] pr-[33px]">
+            More
+            <img class="h-[14px] mb-[2px]"
+                src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyMCAyMCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAuMDAxMSAxMC42NjEyTDUuOTEyMzQgNi41NzI0MUM1LjU5Njk5IDYuMjU3ODkgNS4wNjk0OSA2LjI1Mjk0IDQuNzQ3NTQgNi41NzQ4OUM0LjQyMjI4IDYuOTAwMTQgNC40MjM5MyA3LjQxOTM5IDQuNzQ1MDYgNy43Mzk2OUwxMC4wMDExIDEyLjk5NjZMMTUuMjU4OCA3LjczODA0QzE1LjU3NDIgNy40MjI2OSAxNS41NzkxIDYuODk1MTkgMTUuMjU2NCA2LjU3MzI0QzE0LjkzMTkgNi4yNDg4MSAxNC40MTI3IDYuMjQ5NjMgMTQuMDkxNiA2LjU3MDc2TDEwLjAwMTEgMTAuNjYxMloiIGZpbGw9IiMyMzJBMzEiLz48L3N2Zz4="
+                alt="">
+        </li>
+        </ul>
+    </div>
+
+    <div class=" flex space-x-2 ">
+        <button class="lg:h-9 lg:w-[4rem] items-center justify-center flex rounded-full w-14 h-7 border border-[#6001d2]">
+            <i class="fa-sm p-1 fa-solid fa-envelope text-[#6001d2]"></i>
+            <h1 class="lg:text-[12px] text-[10px] text-[#6001d2] font-semibold" >Mail</h1>
+        </button>
+        <button class="lg:h-9 lg:w-[4rem] rounded-full w-14 h-7  border hover:border-[#6001d2]">
+            <h3 class="lg:text-[12px] text-[10px] font-semibold text-[#1d2228] hover:text-[#6001d2]">Sign in</h3>
+        </button>
+    </div>
+</nav>
+    <!-- navbar  ends -->
+
+<header class="flex p-[1rem] w-full h-[55vh] mt-[6rem] ">
+    <div class=" md:ml-[1rem] lg:ml-[2rem] xl:ml-[6rem] lg:w-[97%] md:w-[96%]  h-[100%] w-full xl:w-[70%] rounded-lg mt-[rem]">
+        <div class="flex h-[65%] w-full rounded-lg">
+           <img class="w-[60%] h-full rounded-l-lg"  src="https://s.yimg.com/uu/api/res/1.2/Xe9aLRGm2AsEcpEuZYd2pA--~B/Zmk9c3RyaW07aD0xODA7cT04MDt3PTM1NjthcHBpZD15dGFjaHlvbg--/https://s.yimg.com/os/creatr-uploaded-images/2024-06/3813bd10-332c-11ef-bdbb-738bffccdd42.cf.webp" alt="">
+            <div class="space-y-2 p-6 w-[95%] xl:w-[40%] bg-[#f0f3f5] flex-col justify-center items-center rounded-r-lg">
+                <h3 class="md:text-[20px] xl:text-[24px] text-[12px] font-bold">
+                   Heat is killing thousands, big events have not adjusted 
+                </h3>
+                <p class="md:text-[12px] xl:text-[16px] text-[10px]">
+                    Heat kills more people today than any other extreme weather event, but many major-event organizers are failing to contend with the risks.
+                </p>
+                <a href="#">
+                    <h3 class="lg:mt-[1rem] md:text-[13px] font-bold xl:text-[18px] text-[12px]">
+                        'We're going to have to adapt' »
+                    </h3>
+                </a>
+
+
+            </div>
+        </div>
+        <div class=" h-[30%] w-full rounded-lg mt-[.5rem]">
+                <ul class=" h-[100%] flex">
+                    <li class=" flex-col w-[20%] h-[100%] ">
+                        <img class="p-1 rounded-lg h-auto w-[100%] " src="https://s.yimg.com/uu/api/res/1.2/XjKKKu9E.RnlhzQmfkf8pg--~B/Zmk9c3RyaW07aD0xODA7cT04MDt3PTM1NjthcHBpZD15dGFjaHlvbg--/https://s.yimg.com/os/creatr-uploaded-images/2024-06/93c561e0-3363-11ef-be77-691577588724.cf.webp" alt="">
+                        <h3 class="pl-[5px] font-bold lg:text-[14px] text-[11px] w-[100%]" >Jamaal Bowman becomes first member of the 'Squad' to lose 2024 primary</h3>
+                    </li>
+                    <li class=" flex-col w-[20%] h-[100%] ">
+                        <img class="p-1 rounded-lg h-auto w-[100%] " src="https://s.yimg.com/uu/api/res/1.2/oKIPp7EUgd3vk8kSuDBoPg--~B/Zmk9c3RyaW07aD0xODA7cT04MDt3PTM1NjthcHBpZD15dGFjaHlvbg--/https://s.yimg.com/os/creatr-uploaded-images/2024-06/22355f40-3353-11ef-bca7-95a22fdecfdc.cf.webp" alt="">
+                        <h3 class="pl-[5px] font-bold lg:text-[14px] text-[11px] w-[100%]" >Ref collapses during sweltering Copa América match in Kansas</h3>
+                    </li>
+                    <li class=" flex-col w-[20%] h-[100%] ">
+                        <img class="p-1 rounded-lg h-auto w-[100%] " src="https://s.yimg.com/uu/api/res/1.2/2_jSC_9X3Lv.gnaRbKnyJQ--~B/Zmk9c3RyaW07aD0xODA7cT04MDt3PTM1NjthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/en/people_218/c4be745466e6bb9bc72df6beb37c6d9f.cf.webp" alt="">
+                        <h3 class="pl-[5px] font-bold lg:text-[14px] text-[11px] w-[100%]" >How Christina Applegate's MS fight has affected her teen daughter</h3>
+                    </li>
+                    <li class=" flex-col w-[20%] h-[100%] ">
+                        <img class="p-1 rounded-lg h-auto w-[100%] " src="https://s.yimg.com/uu/api/res/1.2/8iauzfqC9M8cTwUnrTe2GA--~B/Zmk9c3RyaW07aD0xODA7cT04MDt3PTM1NjthcHBpZD15dGFjaHlvbg--/https://s.yimg.com/os/creatr-uploaded-images/2024-06/60336610-3331-11ef-beaf-2e240a5c39d3.cf.webp" alt="">
+                        <h3 class="pl-[5px] font-bold lg:text-[14px] text-[11px] w-[100%]" >Health officials tell U.S. doctors to be on alert as dengue cases rise worldwide</h3>
+                    </li>
+                    <li class=" flex-col w-[20%] h-[100%] ">
+                        <img class="p-1 rounded-lg h-auto w-[100%] " src="https://s.yimg.com/uu/api/res/1.2/Xe9aLRGm2AsEcpEuZYd2pA--~B/Zmk9c3RyaW07aD0xODA7cT04MDt3PTM1NjthcHBpZD15dGFjaHlvbg--/https://s.yimg.com/os/creatr-uploaded-images/2024-06/3813bd10-332c-11ef-bdbb-738bffccdd42.cf.webp" alt="">
+                        <h3 class="pl-[5px] font-bold lg:text-[14px] text-[11px] w-[100%]" >NTSB reveals cause of toxic train crash in East Palestine, Ohio</h3>
+                    </li>
+                </ul>
+        </div>
+        
+    </div>
+    <div class="lg:ml-6 hidden lg:block">
+        <div class="bg-white h-[12rem] w-[19rem] rounded-lg border-none shadow-lg">
+            <div class="flex items-center ml-2">
+                <div class="rounded-sm w-[10px] h-[18px] bg-[#6001d2] mr-[10px]"></div>
+                <h3 class="mt-3 font-bold mb-3">Trending Now</h3>
+            </div>
+            <div class="flex justify-center space-x-4 text-[14px] ">
+                <ol>
+                    <li><span class="text-[#6001d2]">1.</span> Shivon Zilis</li>
+                    <li><span class="text-[#6001d2]">2.</span> Rapidan Dam</li>
+                    <li><span class="text-[#6001d2]">3.</span> John Force</li>
+                    <li><span class="text-[#6001d2]">4.</span> Donald Trump</li>
+                    <li><span class="text-[#6001d2] text-">5.</span> Athing Mu</li>
+                </ol>
+
+                <ol>
+                    <li><span class="text-[#6001d2]">6.</span> NCAA BASEball Co...</li>
+                    <li><span class="text-[#6001d2]">7.</span> Stanley Cup</li>
+                    <li><span class="text-[#6001d2]">8.</span> Karen Read</li>
+                    <li><span class="text-[#6001d2]">9.</span> Travis Kelce</li>
+                    <li><span class="text-[#6001d2]">10.</span> Julian Assange</li>
+                </ol>
+            </div>
+        </div>
+        <br>
+        <div class="bg-white h-[12rem] w-[19rem] rounded-lg border-none shadow-lg">
+            <div class="flex items-center ml-2">
+                <div class="rounded-sm w-[10px] h-[18px] bg-[#6001d2] mr-[10px]"></div>
+                <h3 class="mt-3 font-bold mb-3">Weather</h3>
+            </div>
+            <div class="flex justify-center space-x-4 text-[14px] ">
+                <ol>
+                    <li><span class="text-[#6001d2]">1.</span> Shivon Zilis</li>
+                    <li><span class="text-[#6001d2]">2.</span> Rapidan Dam</li>
+                    <li><span class="text-[#6001d2]">3.</span> John Force</li>
+                    <li><span class="text-[#6001d2]">4.</span> Donald Trump</li>
+                    <li><span class="text-[#6001d2] text-">5.</span> Athing Mu</li>
+                </ol>
+
+                <ol>
+                    <li><span class="text-[#6001d2]">6.</span> NCAA BASEball Co...</li>
+                    <li><span class="text-[#6001d2]">7.</span> Stanley Cup</li>
+                    <li><span class="text-[#6001d2]">8.</span> Karen Read</li>
+                    <li><span class="text-[#6001d2]">9.</span> Travis Kelce</li>
+                    <li><span class="text-[#6001d2]">10.</span> Julian Assange</li>
+                </ol>
+            </div>
+        </div>
+        <br>
+        <div class="bg-white h-[18rem] w-[19rem] rounded-lg border-none shadow-lg">
+            <div class="flex items-center ml-2">
+                <div class="rounded-sm w-[10px] h-[18px] bg-[#6001d2] mr-[10px]"></div>
+                <h3 class="mt-3 font-bold mb-3">Weather</h3>
+            </div>
+            <div class="flex justify-center space-x-4 text-[14px] ">
+                <ol>
+                    <li><span class="text-[#6001d2]">1.</span> Shivon Zilis</li>
+                    <li><span class="text-[#6001d2]">2.</span> Rapidan Dam</li>
+                    <li><span class="text-[#6001d2]">3.</span> John Force</li>
+                    <li><span class="text-[#6001d2]">4.</span> Donald Trump</li>
+                    <li><span class="text-[#6001d2] text-">5.</span> Athing Mu</li>
+                </ol>
+
+                <ol>
+                    <li><span class="text-[#6001d2]">6.</span> NCAA BASEball Co...</li>
+                    <li><span class="text-[#6001d2]">7.</span> Stanley Cup</li>
+                    <li><span class="text-[#6001d2]">8.</span> Karen Read</li>
+                    <li><span class="text-[#6001d2]">9.</span> Travis Kelce</li>
+                    <li><span class="text-[#6001d2]">10.</span> Julian Assange</li>
+                </ol>
+            </div>
+        </div>
+        <br>
+        <div class="bg-white h-[11rem] w-[19rem] rounded-lg border-none shadow-lg">
+            <div class="flex items-center ml-2">
+                <div class="rounded-sm w-[10px] h-[18px] bg-[#6001d2] mr-[10px]"></div>
+                <h3 class="mt-3 font-bold mb-3">Weather</h3>
+            </div>
+            <div class="flex justify-center space-x-4 text-[14px] ">
+                <ol>
+                    <li><span class="text-[#6001d2]">1.</span> Shivon Zilis</li>
+                    <li><span class="text-[#6001d2]">2.</span> Rapidan Dam</li>
+                    <li><span class="text-[#6001d2]">3.</span> John Force</li>
+                    <li><span class="text-[#6001d2]">4.</span> Donald Trump</li>
+                    <li><span class="text-[#6001d2] text-">5.</span> Athing Mu</li>
+                </ol>
+
+                <ol>
+                    <li><span class="text-[#6001d2]">6.</span> NCAA BASEball Co...</li>
+                    <li><span class="text-[#6001d2]">7.</span> Stanley Cup</li>
+                    <li><span class="text-[#6001d2]">8.</span> Karen Read</li>
+                    <li><span class="text-[#6001d2]">9.</span> Travis Kelce</li>
+                    <li><span class="text-[#6001d2]">10.</span> Julian Assange</li>
+                </ol>
+            </div>
+        </div>
+
+        <div id="space" class="h-[44rem]">
+
+        </div>
+        
+        <div class=" h-[12rem] w-[19rem] rounded-lg border-none shadow-lg">
+            <div class="flex items-center ml-2">
+                <div class="rounded-sm w-[10px] h-[18px] bg-[#6001d2] mr-[10px]"></div>
+                <h3 class="mt-3 font-bold mb-3">Weather</h3>
+            </div>
+            <div class="flex justify-center space-x-4 text-[14px] ">
+                <ol>
+                                 
+                </ol>
+
+                <ol>
+                    <li>
+                        <p>Terms and <a href="#">Privacy Policy</a> Privacy Dashboard</p>
+                        <p></p>
+                    </li>                
+                </ol>
+            </div>
+        </div>
+
+    </div>
+    
+</header>
+
+<!-- news section start fron here -->
+
+<div class="lg:mt-6 h-auto md:pl-[2rem] lg:pl-[3rem] xl:pl-[7rem]  pl-[1rem] w-full lg:w-[75%] ">
+    <div class="flex items-center">
+        <div class="rounded-sm w-[10px] h-[18px] bg-[#6001d2] mr-[10px]"></div>
+        <h3 class="mt-3 font-bold mb-3">Stories for you</h3>
+    </div>
+    
+    <div class=" flex items-center h-[160px] w-[100%]">
+        <img class=" rounded-lg w-auto h-[85%]"
+        src="https://s.yimg.com/uu/api/res/1.2/yB3iDObzwkp6VMOQgyPejQ--~B/Zmk9c3RyaW07aD0xNzA7cT04MDt3PTMyNjthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/en/ap.org/6c8829920ba333e36595767f8543c11b.cf.webp"
+        alt="img1">
+        <div class="ml-5 w-[50%] h-auto">
+            <div class="justify-start items-center flex w-[300px] h-[18px]">
+                <h4 class="font-medium text-[#5d5eff] text-[13px]">US</h4>
+                <h4 class="font-medium text-[#5b636a] text-[13px] ml-[10px]">. CNN</h4>
+            </div>
+            <h3 class=" text-[14px] lg:text-[18px] font-[900] text-[#1d2228]">
+                Takeaways: A possible Trump VP pick grapples with supporting a CO2 pipeline
+            </h3>
+            <p class="text-[12px] lg:text-[16px]">
+                12-year-old drummer born with no hands receives life-changing gift from Tennessee Tech
+                engineering.....
+                
+            </p>
+            <div class="justify-start items-center flex w-[300px] h-[18px]">
+                <img class="text-[#5b636a] mr-[6px] h-[18px]" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGNsYXNzPSJNZW5kKDRweCkgQ3VyKHApIiB3aWR0aD0iMTUiIHN0eWxlPSJmaWxsOkN1cnJlbnRDb2xvcjtzdHJva2U6Q3VycmVudENvbG9yO3N0cm9rZS13aWR0aDowO3ZlcnRpY2FsLWFsaWduOmJvdHRvbSIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDI0IDI0IiBkYXRhLWljb249ImNvbW1lbnQtZnVqaS1vdXRsaW5lIj48cGF0aCBkPSJNMTUuNDkgM0g4Ljc1N0M0Ljc5NyAzIDEuMzMgNS45NiAxLjAyMyA5LjkwNi43NTMgMTMuNDE0IDIuOTEgMTYuNDc2IDYgMTcuNTd2My43NGMwIC4yOTYuMjQzLjUuNTAyLjUuMSAwIC4yMDMtLjAzLjI5NS0uMDk3TDExLjgzNyAxOGgzLjQwMmMzLjgxIDAgNy4yMS0yLjczIDcuNjk2LTYuNTA4QzIzLjUyNiA2LjkxOCAxOS45NjYgMyAxNS40OSAzbTAgMmMxLjU4NCAwIDMuMDk0LjY4NCA0LjE0MiAxLjg3NiAxLjA2IDEuMjA0IDEuNTI4IDIuNzUyIDEuMzIgNC4zNkMyMC42MDIgMTMuOTUyIDE4LjE0NiAxNiAxNS4yNCAxNmgtNC4wNmwtLjUzLjM5TDggMTguMzQydi0yLjE4NWwtMS4zMy0uNDcyYy0yLjM0My0uODMtMy44NDQtMy4xNDMtMy42NTItNS42MjRDMy4yMzggNy4yMjQgNS43NTggNSA4Ljc1OCA1aDYuNzMyIi8+PC9zdmc+" id="comment" alt="">
+                <h4 class="font-medium text-[#5b636a] text-[13px]">1.2k</h4>
+                <h4 class="font-medium text-[#5b636a] text-[13px] ml-[10px]">. 2 min read</h4>
+                
+            </div>
+        </div>
+    </div>
+    <div class=" flex items-center h-[160px] w-[100%]">
+        <img class=" rounded-lg w-auto h-[85%]"
+        src="https://s.yimg.com/uu/api/res/1.2/VBKmAEfT9S4XoD69OOioWg--~B/Zmk9c3RyaW07aD0xNzA7cT04MDt3PTMyNjthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/en/bloomberg_politics_602/1e37e3807406892a3f962468722523a6.cf.webp"
+        alt="img1">
+        <div class="ml-5 w-[50%] h-auto">
+            <div class="justify-start items-center flex w-[300px] h-[18px]">
+                <h4 class="font-medium text-[#0f69ff] text-[13px]">Politics</h4>
+                <h4 class="font-medium text-[#5b636a] text-[13px] ml-[10px]">. NBC News</h4>
+            </div>
+            <h3 class=" text-[14px] lg:text-[18px] font-[900]  text-[#1d2228]">
+                Trump Says He’s Privately Decided Who His Running Mate Will Be
+            </h3>
+            <p class="text-[12px] lg:text-[16px]">
+                12-year-old drummer born with no hands receives life-changing gift from Tennessee Tech
+                engineering.....
+            </p>
+            <div class="justify-start items-center flex w-[300px] h-[18px]">
+                <img class="text-[#5b636a] mr-[6px] h-[18px]" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGNsYXNzPSJNZW5kKDRweCkgQ3VyKHApIiB3aWR0aD0iMTUiIHN0eWxlPSJmaWxsOkN1cnJlbnRDb2xvcjtzdHJva2U6Q3VycmVudENvbG9yO3N0cm9rZS13aWR0aDowO3ZlcnRpY2FsLWFsaWduOmJvdHRvbSIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDI0IDI0IiBkYXRhLWljb249ImNvbW1lbnQtZnVqaS1vdXRsaW5lIj48cGF0aCBkPSJNMTUuNDkgM0g4Ljc1N0M0Ljc5NyAzIDEuMzMgNS45NiAxLjAyMyA5LjkwNi43NTMgMTMuNDE0IDIuOTEgMTYuNDc2IDYgMTcuNTd2My43NGMwIC4yOTYuMjQzLjUuNTAyLjUuMSAwIC4yMDMtLjAzLjI5NS0uMDk3TDExLjgzNyAxOGgzLjQwMmMzLjgxIDAgNy4yMS0yLjczIDcuNjk2LTYuNTA4QzIzLjUyNiA2LjkxOCAxOS45NjYgMyAxNS40OSAzbTAgMmMxLjU4NCAwIDMuMDk0LjY4NCA0LjE0MiAxLjg3NiAxLjA2IDEuMjA0IDEuNTI4IDIuNzUyIDEuMzIgNC4zNkMyMC42MDIgMTMuOTUyIDE4LjE0NiAxNiAxNS4yNCAxNmgtNC4wNmwtLjUzLjM5TDggMTguMzQydi0yLjE4NWwtMS4zMy0uNDcyYy0yLjM0My0uODMtMy44NDQtMy4xNDMtMy42NTItNS42MjRDMy4yMzggNy4yMjQgNS43NTggNSA4Ljc1OCA1aDYuNzMyIi8+PC9zdmc+" id="comment" alt="">
+                <h4 class="font-medium text-[#5b636a] text-[13px]">1.9k</h4>
+                <h4 class="font-medium text-[#5b636a] text-[13px] ml-[10px]">. 6 min read</h4>
+                
+            </div>
+        </div>
+    </div>
+    <div class=" flex items-center h-[160px] w-[100%]">
+        <img class=" rounded-lg w-auto h-[85%]"
+        src="https://s.yimg.com/uu/api/res/1.2/rSEoFjhxxaVA4aQt.a7kLQ--~B/Zmk9c3RyaW07aD0xNzA7cT04MDt3PTMyNjthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/en/nbc_news_122/67bf5771c06b436cc0cec62b7f6c5726.cf.webp"
+        alt="img1">
+        <div class="ml-5 w-[50%] h-auto">
+            <div class="justify-start items-center flex w-[300px] h-[18px]">
+                <h4 class="font-medium text-[#eb0f29] text-[13px]">Cleberity</h4>
+                <h4 class="font-medium text-[#5b636a] text-[13px] ml-[10px]">. NBC News</h4>
+            </div>
+            <h3 class=" text-[14px] lg:text-[18px] font-[900]  text-[#1d2228]">
+                Trump zeroes in on his VP finalists: From the Politics Desk
+            </h3>
+            <p class="text-[12px] lg:text-[16px]">
+                12-year-old drummer born with no hands receives life-changing gift from Tennessee Tech
+                engineering.....
+            </p>
+            <div class="justify-start items-center flex w-[300px] h-[18px]">
+                <img class="text-[#5b636a] mr-[6px] h-[18px]" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGNsYXNzPSJNZW5kKDRweCkgQ3VyKHApIiB3aWR0aD0iMTUiIHN0eWxlPSJmaWxsOkN1cnJlbnRDb2xvcjtzdHJva2U6Q3VycmVudENvbG9yO3N0cm9rZS13aWR0aDowO3ZlcnRpY2FsLWFsaWduOmJvdHRvbSIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDI0IDI0IiBkYXRhLWljb249ImNvbW1lbnQtZnVqaS1vdXRsaW5lIj48cGF0aCBkPSJNMTUuNDkgM0g4Ljc1N0M0Ljc5NyAzIDEuMzMgNS45NiAxLjAyMyA5LjkwNi43NTMgMTMuNDE0IDIuOTEgMTYuNDc2IDYgMTcuNTd2My43NGMwIC4yOTYuMjQzLjUuNTAyLjUuMSAwIC4yMDMtLjAzLjI5NS0uMDk3TDExLjgzNyAxOGgzLjQwMmMzLjgxIDAgNy4yMS0yLjczIDcuNjk2LTYuNTA4QzIzLjUyNiA2LjkxOCAxOS45NjYgMyAxNS40OSAzbTAgMmMxLjU4NCAwIDMuMDk0LjY4NCA0LjE0MiAxLjg3NiAxLjA2IDEuMjA0IDEuNTI4IDIuNzUyIDEuMzIgNC4zNkMyMC42MDIgMTMuOTUyIDE4LjE0NiAxNiAxNS4yNCAxNmgtNC4wNmwtLjUzLjM5TDggMTguMzQydi0yLjE4NWwtMS4zMy0uNDcyYy0yLjM0My0uODMtMy44NDQtMy4xNDMtMy42NTItNS42MjRDMy4yMzggNy4yMjQgNS43NTggNSA4Ljc1OCA1aDYuNzMyIi8+PC9zdmc+" id="comment" alt="">
+                <h4 class="font-medium text-[#5b636a] text-[13px]">800</h4>
+                <h4 class="font-medium text-[#5b636a] text-[13px] ml-[10px]">. 8 min read</h4>
+                
+            </div>
+        </div>
+    </div>
+    <div class=" flex items-center h-[160px] w-[100%]">
+        <img class="rounded-lg w-auto h-[85%]"
+        src="https://s.yimg.com/uu/api/res/1.2/hCCA938N4368D6zPlu4u_g--~B/Zmk9c3RyaW07aD0xODA7cT04MDt3PTM1NjthcHBpZD15dGFjaHlvbg--/https://s.yimg.com/os/creatr-uploaded-images/2024-06/68720660-32b4-11ef-b963-764ec7ac089a.cf.webp"
+        alt="img1">
+        <div class="ml-5 w-[50%] h-auto">
+            <div class="justify-start items-center flex w-[300px] h-[18px]">
+                <h4 class="font-medium text-[#5d5eff] text-[13px]">US</h4>
+                <h4 class="font-medium text-[#5b636a] text-[13px] ml-[10px]">. CNN</h4>
+            </div>
+            <h3 class=" text-[14px] lg:text-[18px] font-[900] text-[#1d2228] ">
+                U.S. track star in tears after stunning fall at Olympic trials
+            </h3>
+            <p class="text-[12px] lg:text-[16px]">
+                12-year-old drummer born with no hands receives life-changing gift from Tennessee Tech
+                engineering.....
+            </p>
+            <div class="justify-start items-center flex w-[300px] h-[18px]">
+                    <img class="text-[#5b636a] mr-[6px] h-[18px]" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGNsYXNzPSJNZW5kKDRweCkgQ3VyKHApIiB3aWR0aD0iMTUiIHN0eWxlPSJmaWxsOkN1cnJlbnRDb2xvcjtzdHJva2U6Q3VycmVudENvbG9yO3N0cm9rZS13aWR0aDowO3ZlcnRpY2FsLWFsaWduOmJvdHRvbSIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDI0IDI0IiBkYXRhLWljb249ImNvbW1lbnQtZnVqaS1vdXRsaW5lIj48cGF0aCBkPSJNMTUuNDkgM0g4Ljc1N0M0Ljc5NyAzIDEuMzMgNS45NiAxLjAyMyA5LjkwNi43NTMgMTMuNDE0IDIuOTEgMTYuNDc2IDYgMTcuNTd2My43NGMwIC4yOTYuMjQzLjUuNTAyLjUuMSAwIC4yMDMtLjAzLjI5NS0uMDk3TDExLjgzNyAxOGgzLjQwMmMzLjgxIDAgNy4yMS0yLjczIDcuNjk2LTYuNTA4QzIzLjUyNiA2LjkxOCAxOS45NjYgMyAxNS40OSAzbTAgMmMxLjU4NCAwIDMuMDk0LjY4NCA0LjE0MiAxLjg3NiAxLjA2IDEuMjA0IDEuNTI4IDIuNzUyIDEuMzIgNC4zNkMyMC42MDIgMTMuOTUyIDE4LjE0NiAxNiAxNS4yNCAxNmgtNC4wNmwtLjUzLjM5TDggMTguMzQydi0yLjE4NWwtMS4zMy0uNDcyYy0yLjM0My0uODMtMy44NDQtMy4xNDMtMy42NTItNS42MjRDMy4yMzggNy4yMjQgNS43NTggNSA4Ljc1OCA1aDYuNzMyIi8+PC9zdmc+" id="comment" alt="">
+                    <h4 class="font-medium text-[#5b636a] text-[13px]">5.5k</h4>
+                    <h4 class="font-medium text-[#5b636a] text-[13px] ml-[10px]">. 3 min read</h4>
+
+                </div>
+            
+            </div>
+        </div>
+    <div class=" flex items-center h-[160px] w-[100%]">
+        <img class="rounded-lg w-auto h-[85%]"
+        src="https://s.yimg.com/uu/api/res/1.2/WBiY4L21lG94OY_716JsVQ--~B/Zmk9c3RyaW07aD0xODA7cT04MDt3PTM1NjthcHBpZD15dGFjaHlvbg--/https://s.yimg.com/os/creatr-uploaded-images/2024-06/1e12ce60-32f5-11ef-bf66-8adb391c3e73.cf.webp"
+        alt="img1">
+        <div class="ml-5 w-[50%] h-auto">
+            <div class="justify-start items-center flex w-[300px] h-[18px]">
+                <h4 class="font-medium text-[#eb0f29] text-[13px]">Cleberity</h4>
+                <h4 class="font-medium text-[#5b636a] text-[13px] ml-[10px]">. Fox News</h4>
+            </div>
+            <h3 class=" text-[14px] lg:text-[18px] font-[900]  text-[#1d2228]">
+                Céline Dion has a severe medical crisis on camera while filming documentary
+            </h3>
+            <p class="text-[12px] lg:text-[16px]">
+                12-year-old drummer born with no hands receives life-changing gift from Tennessee Tech
+                engineering.....
+            </p>
+            <div class="justify-start items-center flex w-[300px] h-[18px]">
+                <img class="text-[#5b636a] mr-[6px] h-[18px]" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGNsYXNzPSJNZW5kKDRweCkgQ3VyKHApIiB3aWR0aD0iMTUiIHN0eWxlPSJmaWxsOkN1cnJlbnRDb2xvcjtzdHJva2U6Q3VycmVudENvbG9yO3N0cm9rZS13aWR0aDowO3ZlcnRpY2FsLWFsaWduOmJvdHRvbSIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDI0IDI0IiBkYXRhLWljb249ImNvbW1lbnQtZnVqaS1vdXRsaW5lIj48cGF0aCBkPSJNMTUuNDkgM0g4Ljc1N0M0Ljc5NyAzIDEuMzMgNS45NiAxLjAyMyA5LjkwNi43NTMgMTMuNDE0IDIuOTEgMTYuNDc2IDYgMTcuNTd2My43NGMwIC4yOTYuMjQzLjUuNTAyLjUuMSAwIC4yMDMtLjAzLjI5NS0uMDk3TDExLjgzNyAxOGgzLjQwMmMzLjgxIDAgNy4yMS0yLjczIDcuNjk2LTYuNTA4QzIzLjUyNiA2LjkxOCAxOS45NjYgMyAxNS40OSAzbTAgMmMxLjU4NCAwIDMuMDk0LjY4NCA0LjE0MiAxLjg3NiAxLjA2IDEuMjA0IDEuNTI4IDIuNzUyIDEuMzIgNC4zNkMyMC42MDIgMTMuOTUyIDE4LjE0NiAxNiAxNS4yNCAxNmgtNC4wNmwtLjUzLjM5TDggMTguMzQydi0yLjE4NWwtMS4zMy0uNDcyYy0yLjM0My0uODMtMy44NDQtMy4xNDMtMy42NTItNS42MjRDMy4yMzggNy4yMjQgNS43NTggNSA4Ljc1OCA1aDYuNzMyIi8+PC9zdmc+" id="comment" alt="">
+                <h4 class="font-medium text-[#5b636a] text-[13px]">5k</h4>
+                <h4 class="font-medium text-[#5b636a] text-[13px] ml-[10px]">. 2 min read</h4>
+                
+            </div>
+        </div>
+    </div>
+    <div class=" flex items-center h-[160px] w-[100%]">
+        <img class=" rounded-lg w-auto h-[85%]"
+        src="https://s.yimg.com/uu/api/res/1.2/f_AZ3dkOFAfvMSK6WwnoSQ--~B/Zmk9c3RyaW07aD0xODA7cT04MDt3PTM1NjthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/en/bbc_us_articles_995/34f554ac10269348edd3e5cfecbee4b1.cf.webp"
+        alt="img1">
+        <div class="ml-5 w-[50%] h-auto">
+            <div class="justify-start items-center flex w-[300px] h-[18px]">
+                <h4 class="font-medium text-[#5d5eff] text-[13px]">US</h4>
+                <h4 class="font-medium text-[#5b636a] text-[13px] ml-[10px]">. CNN</h4>
+            </div>
+            <h3 class=" text-[14px] lg:text-[18px] font-[900] text-[#1d2228]">
+                U.S. couple 'walked for hours' before dying in hajj heat, daughter says
+            </h3>
+            <p class="text-[12px] lg:text-[16px]">
+                12-year-old drummer born with no hands receives life-changing gift from Tennessee Tech
+                engineering.....
+            </p>
+            <div class="justify-start items-center flex w-[300px] h-[18px]">
+                <img class="text-[#5b636a] mr-[6px] h-[18px]" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGNsYXNzPSJNZW5kKDRweCkgQ3VyKHApIiB3aWR0aD0iMTUiIHN0eWxlPSJmaWxsOkN1cnJlbnRDb2xvcjtzdHJva2U6Q3VycmVudENvbG9yO3N0cm9rZS13aWR0aDowO3ZlcnRpY2FsLWFsaWduOmJvdHRvbSIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDI0IDI0IiBkYXRhLWljb249ImNvbW1lbnQtZnVqaS1vdXRsaW5lIj48cGF0aCBkPSJNMTUuNDkgM0g4Ljc1N0M0Ljc5NyAzIDEuMzMgNS45NiAxLjAyMyA5LjkwNi43NTMgMTMuNDE0IDIuOTEgMTYuNDc2IDYgMTcuNTd2My43NGMwIC4yOTYuMjQzLjUuNTAyLjUuMSAwIC4yMDMtLjAzLjI5NS0uMDk3TDExLjgzNyAxOGgzLjQwMmMzLjgxIDAgNy4yMS0yLjczIDcuNjk2LTYuNTA4QzIzLjUyNiA2LjkxOCAxOS45NjYgMyAxNS40OSAzbTAgMmMxLjU4NCAwIDMuMDk0LjY4NCA0LjE0MiAxLjg3NiAxLjA2IDEuMjA0IDEuNTI4IDIuNzUyIDEuMzIgNC4zNkMyMC42MDIgMTMuOTUyIDE4LjE0NiAxNiAxNS4yNCAxNmgtNC4wNmwtLjUzLjM5TDggMTguMzQydi0yLjE4NWwtMS4zMy0uNDcyYy0yLjM0My0uODMtMy44NDQtMy4xNDMtMy42NTItNS42MjRDMy4yMzggNy4yMjQgNS43NTggNSA4Ljc1OCA1aDYuNzMyIi8+PC9zdmc+" id="comment" alt="">
+                <h4 class="font-medium text-[#5b636a] text-[13px]">1.5k</h4>
+                <h4 class="font-medium text-[#5b636a] text-[13px] ml-[10px]">. 3 min read</h4>
+                
+            </div>
+        </div>
+    </div>
+    <div class=" flex items-center h-[160px] w-[100%]">
+        <img class="rounded-lg w-auto h-[85%]"
+        src="https://s.yimg.com/uu/api/res/1.2/QQcSdg5HqVFJPgXIQeoVjw--~B/Zmk9c3RyaW07aD0xODA7cT04MDt3PTM1NjthcHBpZD15dGFjaHlvbg--/https://media.zenfs.com/en/cnn_business_articles_218/ea8c9328296eae6ce6b0efbf3742efab.cf.webp"
+        alt="img1">
+        <div class="ml-5 w-[50%] h-auto">
+            <div class="justify-start items-center flex w-[300px] h-[18px]">
+                <h4 class="font-medium text-[#5d5eff] text-[13px]">Politics</h4>
+                <h4 class="font-medium text-[#5b636a] text-[13px] ml-[10px]">. CNN</h4>
+            </div>
+            <h3 class=" text-[14px] lg:text-[18px] font-[900] text-[#1d2228]">
+                Hooters closes dozens of 'underperforming' restaurants across the U.S.
+            </h3>
+            <p class="text-[12px] lg:text-[16px]">
+                12-year-old drummer born with no hands receives life-changing gift from Tennessee Tech
+                engineering.....
+            </p>
+            <div class="justify-start items-center flex w-[300px] h-[18px]">
+                <img class="text-[#5b636a] mr-[6px] h-[18px]" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGNsYXNzPSJNZW5kKDRweCkgQ3VyKHApIiB3aWR0aD0iMTUiIHN0eWxlPSJmaWxsOkN1cnJlbnRDb2xvcjtzdHJva2U6Q3VycmVudENvbG9yO3N0cm9rZS13aWR0aDowO3ZlcnRpY2FsLWFsaWduOmJvdHRvbSIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDI0IDI0IiBkYXRhLWljb249ImNvbW1lbnQtZnVqaS1vdXRsaW5lIj48cGF0aCBkPSJNMTUuNDkgM0g4Ljc1N0M0Ljc5NyAzIDEuMzMgNS45NiAxLjAyMyA5LjkwNi43NTMgMTMuNDE0IDIuOTEgMTYuNDc2IDYgMTcuNTd2My43NGMwIC4yOTYuMjQzLjUuNTAyLjUuMSAwIC4yMDMtLjAzLjI5NS0uMDk3TDExLjgzNyAxOGgzLjQwMmMzLjgxIDAgNy4yMS0yLjczIDcuNjk2LTYuNTA4QzIzLjUyNiA2LjkxOCAxOS45NjYgMyAxNS40OSAzbTAgMmMxLjU4NCAwIDMuMDk0LjY4NCA0LjE0MiAxLjg3NiAxLjA2IDEuMjA0IDEuNTI4IDIuNzUyIDEuMzIgNC4zNkMyMC42MDIgMTMuOTUyIDE4LjE0NiAxNiAxNS4yNCAxNmgtNC4wNmwtLjUzLjM5TDggMTguMzQydi0yLjE4NWwtMS4zMy0uNDcyYy0yLjM0My0uODMtMy44NDQtMy4xNDMtMy42NTItNS42MjRDMy4yMzggNy4yMjQgNS43NTggNSA4Ljc1OCA1aDYuNzMyIi8+PC9zdmc+" id="comment" alt="">
+                <h4 class="font-medium text-[#5b636a] text-[13px]">5.5k</h4>
+                <h4 class="font-medium text-[#5b636a] text-[13px] ml-[10px]">. 9 min read</h4>
+                
+            </div>
+        </div>
+    </div>
+    <div class=" flex items-center h-[160px] w-[100%]">
+        <img class="rounded-lg w-auto h-[85%]"
+        src="https://s.yimg.com/uu/api/res/1.2/ZmwzNEshWM093QvB7jDq4w--~B/Zmk9c3RyaW07aD0xODA7cT04MDt3PTM1NjthcHBpZD15dGFjaHlvbg--/https://s.yimg.com/os/creatr-uploaded-images/2024-06/e79da640-32b6-11ef-ad7b-2f3e2698ad3d.cf.webp"
+        alt="img1">
+        <div class="ml-5 w-[50%] h-auto">
+            <div class="justify-start items-center flex w-[300px] h-[18px]">
+                <h4 class="font-medium text-[#eb0f29] text-[13px]">Cleberity</h4>
+                <h4 class="font-medium text-[#5b636a] text-[13px] ml-[10px]">. Fox News</h4>
+            </div>
+            <h3 class=" text-[14px] lg:text-[18px] font-[900] text-[#1d2228] ">
+                Elon Musk welcomes 3rd child with executive who works at his company
+            </h3>
+            <p class="text-[12px] lg:text-[16px]">
+                12-year-old drummer born with no hands receives life-changing gift from Tennessee Tech
+                engineering.....
+            </p>
+            <div class="justify-start items-center flex w-[300px] h-[18px]">
+                <img class="text-[#5b636a] mr-[6px] h-[18px]" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGNsYXNzPSJNZW5kKDRweCkgQ3VyKHApIiB3aWR0aD0iMTUiIHN0eWxlPSJmaWxsOkN1cnJlbnRDb2xvcjtzdHJva2U6Q3VycmVudENvbG9yO3N0cm9rZS13aWR0aDowO3ZlcnRpY2FsLWFsaWduOmJvdHRvbSIgaGVpZ2h0PSIxNSIgdmlld0JveD0iMCAwIDI0IDI0IiBkYXRhLWljb249ImNvbW1lbnQtZnVqaS1vdXRsaW5lIj48cGF0aCBkPSJNMTUuNDkgM0g4Ljc1N0M0Ljc5NyAzIDEuMzMgNS45NiAxLjAyMyA5LjkwNi43NTMgMTMuNDE0IDIuOTEgMTYuNDc2IDYgMTcuNTd2My43NGMwIC4yOTYuMjQzLjUuNTAyLjUuMSAwIC4yMDMtLjAzLjI5NS0uMDk3TDExLjgzNyAxOGgzLjQwMmMzLjgxIDAgNy4yMS0yLjczIDcuNjk2LTYuNTA4QzIzLjUyNiA2LjkxOCAxOS45NjYgMyAxNS40OSAzbTAgMmMxLjU4NCAwIDMuMDk0LjY4NCA0LjE0MiAxLjg3NiAxLjA2IDEuMjA0IDEuNTI4IDIuNzUyIDEuMzIgNC4zNkMyMC42MDIgMTMuOTUyIDE4LjE0NiAxNiAxNS4yNCAxNmgtNC4wNmwtLjUzLjM5TDggMTguMzQydi0yLjE4NWwtMS4zMy0uNDcyYy0yLjM0My0uODMtMy44NDQtMy4xNDMtMy42NTItNS42MjRDMy4yMzggNy4yMjQgNS43NTggNSA4Ljc1OCA1aDYuNzMyIi8+PC9zdmc+" id="comment" alt="">
+                <h4 class="font-medium text-[#5b636a] text-[13px]">500</h4>
+                <h4 class="font-medium text-[#5b636a] text-[13px] ml-[10px]">. 3 min read</h4>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- news end here -->
+
+
+<!-- js code to control shadow -->
+<script>
+const navbar = document.getElementById('navbar');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 0) {
+        navbar.classList.add('shadow-lg');
+    } else {
+        navbar.classList.remove('shadow-lg');
+    }
+});
+</script>
+
+
+
+</body>
+</html>
